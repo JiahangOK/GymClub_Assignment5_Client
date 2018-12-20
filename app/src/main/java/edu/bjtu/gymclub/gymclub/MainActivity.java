@@ -233,7 +233,17 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(Object response) {
                         Log.e(TAG,"登录成功"+response.toString());
-                        Toast.makeText(MainActivity.this, "登录成功 ", Toast.LENGTH_SHORT).show();
+                        Intent intent;
+                        intent = new Intent();
+                        intent.setClass(MainActivity.this, MainInterfaceActivity.class);
+                        intent.putExtra("jsoninfo", "{\"trainer_info\":[{\"trainer_image_url\":\"http:\\/\\/172.30.115.162:8080\\/userPicture?filename=13161819277\\/Andy.jpg\",\"trainer_name\":\"Andy\",\"trainer_intro\":\"This is Andy's infor\n" +
+                                "mation.\",\"trainer_tel\":\"13161822222\",\"trainer_email\":\"295863666@qq.com\"},{\"trainer_image_url\":\"http:\\/\\/172.30.115.162:8080\\/userPicture?filename=13161819277\\/Mike.jpg\",\"trainer_name\n" +
+                                "\":\"Mike\",\"trainer_intro\":\"This is Mike's information.\",\"trainer_tel\":\"13161819221\",\"trainer_email\":\"291863666@qq.com\"},{\"trainer_image_url\":\"http:\\/\\/172.30.115.162:8080\\/userPicture\n" +
+                                "?filename=13161819277\\/Peter.jpg\",\"trainer_name\":\"Peter\",\"trainer_intro\":\"This is Peter's information.\",\"trainer_tel\":\"15263695862\",\"trainer_email\":\"295863166@qq.com\"},{\"trainer_imag\n" +
+                                "e_url\":\"http:\\/\\/172.30.115.162:8080\\/userPicture?filename=13161819277\\/Ruby.jpg\",\"trainer_name\":\"Ruby\",\"trainer_intro\":\"This is Ruby's information.\",\"trainer_tel\":\"13145896253\",\"tra\n" +
+                                "iner_email\":\"2958636655@qq.com\"},{\"trainer_image_url\":\"http:\\/\\/172.30.115.162:8080\\/userPicture?filename=13161819277\\/Tim.jpg\",\"trainer_name\":\"Tim\",\"trainer_intro\":\"This is Tim's in\n" +
+                                "formation.\",\"trainer_tel\":\"15478596352\",\"trainer_email\":\"295800666@qq.com\"}]}");
+                        startActivity(intent);
                     }
 
                     @Override
