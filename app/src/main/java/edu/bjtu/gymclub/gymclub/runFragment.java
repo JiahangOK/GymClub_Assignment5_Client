@@ -104,7 +104,7 @@ public class runFragment extends Fragment {
         //数据存储API(SharedPreferences)
         SharedPreferences sp = null;
         sp = getActivity().getSharedPreferences("userinfo", Context.MODE_PRIVATE);//sp.getString()第二个参数是缺省值，如果SharedPreferences中不存在值就返回缺省值
-        String username = sp.getString("USERNAME", ""); //获取sp里面存储的数据
+        String username = "Wujiahang"; //获取sp里面存储的数据
         if (isNetworkAvalible(getContext())) {
             String url_test = "http://" + Config.HOST + ":8080";
             String url = "http://" + Config.HOST + ":8080/userTrainer";

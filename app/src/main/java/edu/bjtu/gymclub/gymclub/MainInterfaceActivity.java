@@ -57,12 +57,12 @@ public class MainInterfaceActivity extends AppCompatActivity {
 
         setContentView(R.layout.main_interface);
         Intent intent = getIntent();
-        String jsoninfo = intent.getStringExtra("jsoninfo");
-        initView(jsoninfo);
+
+        initView();
     }
 
 
-    private void initView(final String jsoninfo) {
+    private void initView() {
 
 
         rb_sport = (RadioButton) findViewById(R.id.rb_sport);
@@ -74,7 +74,7 @@ public class MainInterfaceActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 transaction = manager.beginTransaction();
-                transaction.replace(R.id.content_layout, new sportFragment(jsoninfo));
+                transaction.replace(R.id.content_layout, new sportFragment());
                 transaction.commit();
             }
         });
@@ -92,7 +92,7 @@ public class MainInterfaceActivity extends AppCompatActivity {
 
         manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();
-        transaction.add(R.id.content_layout, new sportFragment(jsoninfo),"sportFragment");
+        transaction.add(R.id.content_layout, new sportFragment(),"sportFragment");
         rb_sport.setChecked(true);
         transaction.commit();
 

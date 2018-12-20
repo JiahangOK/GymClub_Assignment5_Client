@@ -20,7 +20,7 @@ public class sportFragment extends Fragment {
     private View view;
     private TabLayout my_table;
     private ViewPager viewPager;
-    private String jsoninfo;
+
 
     //放进集合
     private List<String> tas=new ArrayList<>();
@@ -30,8 +30,8 @@ public class sportFragment extends Fragment {
     }
 
     @SuppressLint("ValidFragment")
-    public sportFragment(String jsoninfo) {
-        this.jsoninfo = jsoninfo;
+    public sportFragment() {
+
     }
 
     @Nullable
@@ -59,7 +59,7 @@ public class sportFragment extends Fragment {
 
 
         //设置适配器  注意：getChildFragmentManager
-        viewPager.setAdapter(new MyAdapter(getChildFragmentManager(),jsoninfo));
+        viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
 
         //建立关联
         my_table.setupWithViewPager(viewPager);
@@ -101,7 +101,7 @@ public class sportFragment extends Fragment {
                     f=new runFragment();
                     break;
                 case 1:
-                    f=new walkFragment(jsoninfo);
+                    f=new rideFragment();
                     break;
                 case 2:
                     f=new rideFragment();
